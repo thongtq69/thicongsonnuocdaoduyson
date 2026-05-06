@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { pageBannerImage } from "@/lib/images";
 
 type Crumb = { label: string; href?: string };
 
@@ -16,17 +17,16 @@ export function PageBanner({
       <div
         className="absolute inset-0 -z-10 bg-cover bg-center"
         style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=2000&q=80')",
+          backgroundImage: `url('${pageBannerImage}')`,
         }}
       />
-      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[rgba(0,50,20,0.85)] via-[rgba(0,90,30,0.7)] to-[rgba(0,90,30,0.5)]" />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[rgba(18,18,18,0.92)] via-[rgba(94,15,15,0.78)] to-[rgba(138,26,26,0.45)]" />
 
       <div className="container-x py-16 md:py-20 text-white">
         <nav aria-label="Breadcrumb" className="text-sm">
           <ol className="flex flex-wrap items-center gap-1.5 text-white/85">
             <li>
-              <Link href="/" className="hover:text-[color:var(--brand-orange)]">
+              <Link href="/" className="hover:text-[color:var(--brand-gold)]">
                 Trang chủ
               </Link>
             </li>
@@ -34,11 +34,11 @@ export function PageBanner({
               <li key={i} className="flex items-center gap-1.5">
                 <span>/</span>
                 {c.href ? (
-                  <Link href={c.href} className="hover:text-[color:var(--brand-orange)]">
+                  <Link href={c.href} className="hover:text-[color:var(--brand-gold)]">
                     {c.label}
                   </Link>
                 ) : (
-                  <span className="text-[color:var(--brand-orange)] font-semibold">{c.label}</span>
+                  <span className="text-[color:var(--brand-gold)] font-semibold">{c.label}</span>
                 )}
               </li>
             ))}

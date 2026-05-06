@@ -6,9 +6,9 @@ import { PageBanner } from "@/components/site/PageBanner";
 import { articles } from "@/lib/data";
 
 export const metadata = {
-  title: "Tin tức & Cẩm nang sơn nhà – Đào Duy Sơn",
+  title: "Tin tức – Bảng báo giá sơn bả – Cẩm nang | Đào Duy Sơn",
   description:
-    "Cập nhật tin tức, báo giá thi công sơn nước mới nhất và cẩm nang chọn sơn, phối màu, chống thấm từ Đào Duy Sơn.",
+    "Cập nhật bảng báo giá sơn bả Hải Phòng, cẩm nang chống thấm, sơn vạch kẻ, sơn hiệu ứng và xu hướng sơn nhà miền Bắc 2026.",
 };
 
 export default function NewsPage() {
@@ -18,8 +18,8 @@ export default function NewsPage() {
       <Header />
       <main className="flex-1">
         <PageBanner
-          title="Tin tức & Cẩm nang"
-          subtitle="Kiến thức, đơn giá và xu hướng sơn nước mới nhất dành cho chủ nhà và chủ đầu tư."
+          title="Tin tức &amp; Bảng báo giá sơn bả"
+          subtitle="Kiến thức, bảng báo giá sơn bả 2026 và cẩm nang chống thấm – sơn vạch kẻ – sơn hiệu ứng dành cho chủ nhà miền Bắc."
           crumbs={[{ label: "Tin tức" }]}
         />
 
@@ -37,13 +37,13 @@ export default function NewsPage() {
                 />
               </Link>
               <div className="lg:col-span-2">
-                <span className="inline-flex rounded-full bg-[color:var(--brand-orange)] px-3 py-1 text-xs font-bold uppercase text-white">
+                <span className="tag-chip">
                   {featured.category}
                 </span>
-                <h2 className="mt-3 text-2xl md:text-3xl font-extrabold text-slate-800 leading-tight">
+                <h2 className="mt-3 text-2xl md:text-3xl font-extrabold text-slate-900 leading-tight">
                   <Link
                     href={`/tin-tuc/${featured.slug}`}
-                    className="hover:text-[color:var(--brand-green)]"
+                    className="hover:text-[color:var(--brand-red)]"
                   >
                     {featured.title}
                   </Link>
@@ -52,7 +52,7 @@ export default function NewsPage() {
                 <p className="mt-4 text-slate-600 leading-relaxed">{featured.excerpt}</p>
                 <Link
                   href={`/tin-tuc/${featured.slug}`}
-                  className="mt-6 inline-flex items-center gap-2 rounded-full border-2 border-[color:var(--brand-green)] px-5 py-2.5 font-semibold text-[color:var(--brand-green)] hover:bg-[color:var(--brand-green)] hover:text-white transition"
+                  className="mt-6 inline-flex items-center gap-2 rounded-full border-2 border-[color:var(--brand-red)] px-5 py-2.5 font-semibold text-[color:var(--brand-red)] hover:bg-brand hover:text-white transition"
                 >
                   Đọc bài viết
                 </Link>
@@ -69,12 +69,12 @@ export default function NewsPage() {
                   <img src={a.img} alt={a.title} className="h-52 w-full object-cover" />
                   <div className="p-5">
                     <div className="flex items-center justify-between text-xs">
-                      <span className="font-bold uppercase text-[color:var(--brand-orange)]">
+                      <span className="font-bold uppercase text-[color:var(--brand-red)]">
                         {a.category}
                       </span>
                       <span className="text-slate-500">{a.date}</span>
                     </div>
-                    <h3 className="mt-2 font-bold text-slate-800 leading-snug line-clamp-2 hover:text-[color:var(--brand-green)]">
+                    <h3 className="mt-2 font-bold text-slate-900 leading-snug line-clamp-2 hover:text-[color:var(--brand-red)]">
                       {a.title}
                     </h3>
                     <p className="mt-2 text-sm text-slate-600 line-clamp-3 leading-relaxed">

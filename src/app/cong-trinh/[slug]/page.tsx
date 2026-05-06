@@ -55,40 +55,40 @@ export default async function ProjectDetail({
               />
 
               <div className="mt-8">
-                <h2 className="text-2xl font-extrabold text-slate-800 uppercase">
+                <h2 className="text-2xl font-extrabold text-slate-900 uppercase">
                   Thông tin công trình
                 </h2>
                 <p className="mt-4 text-slate-600 leading-relaxed">{project.desc}</p>
 
                 <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
-                  <div className="rounded-xl border border-slate-200 bg-[color:var(--muted)] p-4">
+                  <div className="rounded-xl border border-slate-200 bg-muted p-4">
                     <div className="text-xs font-bold uppercase text-slate-500">
                       Hạng mục
                     </div>
-                    <div className="mt-1 font-bold text-slate-800">{project.category}</div>
+                    <div className="mt-1 font-bold text-slate-900">{project.category}</div>
                   </div>
-                  <div className="rounded-xl border border-slate-200 bg-[color:var(--muted)] p-4">
+                  <div className="rounded-xl border border-slate-200 bg-muted p-4">
                     <div className="text-xs font-bold uppercase text-slate-500">
                       Địa điểm
                     </div>
-                    <div className="mt-1 font-bold text-slate-800">{project.location}</div>
+                    <div className="mt-1 font-bold text-slate-900">{project.location}</div>
                   </div>
-                  <div className="rounded-xl border border-slate-200 bg-[color:var(--muted)] p-4">
+                  <div className="rounded-xl border border-slate-200 bg-muted p-4">
                     <div className="text-xs font-bold uppercase text-slate-500">
                       Diện tích
                     </div>
-                    <div className="mt-1 font-bold text-slate-800">{project.area}</div>
+                    <div className="mt-1 font-bold text-slate-900">{project.area}</div>
                   </div>
-                  <div className="rounded-xl border border-slate-200 bg-[color:var(--muted)] p-4">
+                  <div className="rounded-xl border border-slate-200 bg-muted p-4">
                     <div className="text-xs font-bold uppercase text-slate-500">
                       Bảo hành
                     </div>
-                    <div className="mt-1 font-bold text-slate-800">24 tháng</div>
+                    <div className="mt-1 font-bold text-slate-900">24 tháng</div>
                   </div>
                 </div>
 
-                <div className="mt-8 rounded-2xl border border-slate-200 p-6 bg-[color:var(--muted)]">
-                  <h3 className="font-bold text-slate-800 uppercase">
+                <div className="mt-8 rounded-2xl border border-slate-200 p-6 bg-muted">
+                  <h3 className="font-bold text-slate-900 uppercase">
                     Hạng mục thi công
                   </h3>
                   <ul className="mt-3 space-y-2 text-slate-700">
@@ -103,8 +103,8 @@ export default async function ProjectDetail({
             </article>
 
             <aside className="lg:col-span-1 space-y-6">
-              <div className="rounded-2xl bg-[color:var(--brand-green)] text-white p-6">
-                <div className="text-sm font-bold uppercase text-[color:var(--brand-orange)]">
+              <div className="rounded-2xl bg-brand text-white p-6">
+                <div className="text-sm font-bold uppercase text-[color:var(--brand-gold)]">
                   Cần tư vấn?
                 </div>
                 <div className="mt-2 text-xl font-extrabold">
@@ -132,7 +132,7 @@ export default async function ProjectDetail({
                           className="h-16 w-20 flex-none rounded-lg object-cover"
                         />
                         <div className="text-sm">
-                          <div className="font-bold text-slate-800 group-hover:text-[color:var(--brand-green)] leading-snug">
+                          <div className="font-bold text-slate-900 group-hover:text-[color:var(--brand-red)] leading-snug">
                             {o.title}
                           </div>
                           <div className="mt-0.5 text-slate-500">{o.location}</div>

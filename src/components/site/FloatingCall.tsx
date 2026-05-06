@@ -4,7 +4,7 @@ export function FloatingCall() {
       <a
         href="tel:0913742110"
         aria-label="Gọi ngay"
-        className="group flex items-center gap-2 rounded-full bg-[color:var(--brand-orange)] px-4 py-3 font-bold text-white shadow-lg shadow-orange-500/30 hover:bg-[color:var(--brand-orange-dark)]"
+        className="group flex items-center gap-2 rounded-full bg-brand px-4 py-3 font-bold text-white shadow-lg shadow-red-900/40 hover:bg-brand-dark"
       >
         <span className="relative inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/20">
           <span className="absolute inset-0 animate-ping rounded-full bg-white/30" />
@@ -19,7 +19,7 @@ export function FloatingCall() {
         aria-label="Chat Zalo"
         target="_blank"
         rel="noreferrer"
-        className="grid h-12 w-12 place-items-center rounded-full bg-[color:var(--brand-green)] text-white shadow-lg hover:bg-[color:var(--brand-green-dark)]"
+        className="grid h-12 w-12 place-items-center rounded-full bg-black-soft text-white shadow-lg hover:bg-black"
       >
         <span className="text-sm font-extrabold">Zalo</span>
       </a>

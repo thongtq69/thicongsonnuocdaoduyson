@@ -1,97 +1,50 @@
-import { pinImages } from "@/lib/images";
-
-const categories = [
+const techCards = [
   {
-    title: "Sơn nhà dân dụng",
-    desc: "Sơn nhà phố, nhà cấp 4, căn hộ chung cư – trọn gói vật tư và nhân công.",
-    img: pinImages[0],
+    code: "Bám",
+    title: "Bám chắc nền tường",
+    desc: "Xử lý bụi phấn, kiềm hóa, nứt chân chim trước khi lăn lót để lớp sơn sau bám đúng chuẩn.",
   },
   {
-    title: "Sơn biệt thự cao cấp",
-    desc: "Sơn biệt thự hiện đại, tân cổ điển với sơn hiệu ứng, giả đá, giả bê tông.",
-    img: pinImages[1],
+    code: "Phủ",
+    title: "Phủ đều màu",
+    desc: "Thi công đúng định mức, kiểm tra ánh sáng xiên và dặm vá ngay khi nghiệm thu từng phòng.",
   },
   {
-    title: "Sơn văn phòng – showroom",
-    desc: "Thi công ngoài giờ, sơn nhanh khô – không ảnh hưởng kinh doanh.",
-    img: pinImages[2],
-  },
-  {
-    title: "Sơn chống thấm tường, mái",
-    desc: "Xử lý triệt để thấm dột bằng hệ Kova, Sika, Neomax chuyên dụng.",
-    img: pinImages[3],
-  },
-  {
-    title: "Sơn epoxy nhà xưởng",
-    desc: "Sơn sàn epoxy tự phẳng, epoxy lăn cho kho, xưởng, hầm để xe.",
-    img: pinImages[4],
-  },
-  {
-    title: "Sơn chống nóng mái tôn",
-    desc: "Giảm 10–15°C nhiệt độ mái, tiết kiệm điện, kéo dài tuổi thọ tôn.",
-    img: pinImages[5],
-  },
-  {
-    title: "Sơn hiệu ứng nghệ thuật",
-    desc: "Sơn giả đá marble, bê tông, nhũ vàng, vân gỗ – tạo điểm nhấn sang trọng.",
-    img: pinImages[6],
-  },
-  {
-    title: "Sơn sửa lại nhà cũ",
-    desc: "Xử lý bong tróc, ẩm mốc, phối màu làm mới nhà cũ chỉ trong vài ngày.",
-    img: pinImages[7],
+    code: "Bền",
+    title: "Bền khí hậu miền Bắc",
+    desc: "Chọn hệ sơn chống thấm, chống rêu mốc, chịu nồm ẩm và hơi muối biển cho từng bề mặt.",
   },
 ];
 
 export function About() {
   return (
-    <section id="gioi-thieu" className="py-14 md:py-20 bg-white">
-      <div className="container-x">
-        <div className="text-center">
-          <p className="text-sm font-bold uppercase tracking-widest text-[color:var(--brand-orange)]">
-            Chúng tôi làm những gì?
-          </p>
-          <h2 className="section-title mt-2 text-2xl md:text-3xl text-slate-800 uppercase">
-            Các hạng mục thi công sơn nước Đào Duy Sơn
+    <section id="gioi-thieu" className="relative overflow-hidden bg-white py-16 md:py-24">
+      <div className="container-x grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
+        <div>
+          <p className="eyebrow">Công nghệ thi công</p>
+          <h2 className="mt-3 text-3xl font-black uppercase leading-tight text-slate-950 md:text-5xl">
+            3 chuẩn kiểm soát cho một bề mặt sơn đẹp bền
           </h2>
-          <p className="mt-5 max-w-3xl mx-auto text-slate-600 leading-relaxed">
-            Chúng tôi nhận thi công sơn nước trọn gói cho mọi loại công trình – từ nhà
-            phố, biệt thự, văn phòng đến nhà xưởng. Khảo sát tận nơi miễn phí, báo giá
-            rõ ràng theo m² hoàn thiện.
+          <p className="mt-5 text-base leading-8 text-slate-600">
+            Học logic trình bày của Paint&More nhưng chuyển về thực tế thi công: không nói quá
+            về sản phẩm, tập trung vào cách đội thợ xử lý nền tường, số lớp, tiến độ và nghiệm thu.
           </p>
+          <a href="#lien-he" className="btn-primary mt-7">
+            Nhận tư vấn vật tư
+          </a>
         </div>
 
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {categories.map((c) => (
-            <article
-              key={c.title}
-              className="card-hover group overflow-hidden rounded-xl border border-slate-200 bg-white"
-            >
-              <div className="relative h-40 overflow-hidden">
-                <img
-                  src={c.img}
-                  alt={c.title}
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                <h3 className="absolute bottom-3 left-4 right-4 text-white font-bold leading-tight uppercase text-sm">
-                  {c.title}
-                </h3>
+        <div className="grid gap-4 md:grid-cols-3">
+          {techCards.map((card, index) => (
+            <article key={card.title} className="tech-card group">
+              <div className="flex items-start justify-between gap-4">
+                <span className="text-sm font-black uppercase tracking-[0.28em] text-[color:var(--brand-gold)]">
+                  0{index + 1}
+                </span>
+                <span className="tech-code">{card.code}</span>
               </div>
-              <div className="p-4">
-                <p className="text-sm text-slate-600 leading-relaxed line-clamp-3">
-                  {c.desc}
-                </p>
-                <a
-                  href="tel:0913742110"
-                  className="mt-3 inline-flex items-center gap-1 text-xs font-bold uppercase text-[color:var(--brand-orange)] hover:underline"
-                >
-                  Xem chi tiết
-                  <svg className="h-3.5 w-3.5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M10 17l5-5-5-5v10z" />
-                  </svg>
-                </a>
-              </div>
+              <h3 className="mt-10 text-2xl font-black text-white">{card.title}</h3>
+              <p className="mt-4 text-sm leading-7 text-white/74">{card.desc}</p>
             </article>
           ))}
         </div>

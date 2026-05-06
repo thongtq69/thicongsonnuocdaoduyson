@@ -8,7 +8,7 @@ import { projects } from "@/lib/data";
 export const metadata = {
   title: "Công trình tiêu biểu – Đào Duy Sơn",
   description:
-    "Hình ảnh các công trình sơn nước, chống thấm, epoxy Đào Duy Sơn đã thi công tại TP.HCM và các tỉnh lân cận.",
+    "Hình ảnh các công trình sơn bả – chống thấm – sơn vạch kẻ – sơn epoxy Đào Duy Sơn đã thi công tại Hải Phòng, Quảng Ninh, Hà Nội, Hưng Yên, Bắc Ninh và miền Bắc.",
 };
 
 const categories = Array.from(new Set(projects.map((p) => p.category)));
@@ -20,20 +20,20 @@ export default function ProjectsPage() {
       <main className="flex-1">
         <PageBanner
           title="Công trình tiêu biểu"
-          subtitle="Một phần các công trình đã hoàn thành – từ biệt thự, nhà phố đến văn phòng, nhà xưởng và chống thấm."
+          subtitle="Tổng hợp công trình sơn bả – chống thấm – thạch cao – sơn vạch kẻ Đào Duy Sơn đã hoàn thành tại Hải Phòng, Quảng Ninh, Hà Nội, Hưng Yên, Bắc Ninh, Ninh Bình."
           crumbs={[{ label: "Công trình" }]}
         />
 
         <section className="py-14 md:py-20 bg-white">
           <div className="container-x">
             <div className="mb-8 flex flex-wrap justify-center gap-2">
-              <span className="inline-flex items-center rounded-full bg-[color:var(--brand-green)] text-white px-4 py-1.5 text-sm font-semibold uppercase">
+              <span className="inline-flex items-center rounded-full bg-brand text-white px-4 py-1.5 text-sm font-semibold uppercase">
                 Tất cả
               </span>
               {categories.map((c) => (
                 <span
                   key={c}
-                  className="inline-flex items-center rounded-full border border-slate-300 px-4 py-1.5 text-sm font-semibold uppercase text-slate-700 hover:border-[color:var(--brand-green)] hover:text-[color:var(--brand-green)] cursor-default"
+                  className="inline-flex items-center rounded-full border border-slate-300 px-4 py-1.5 text-sm font-semibold uppercase text-slate-700 hover:border-[color:var(--brand-red)] hover:text-[color:var(--brand-red)] cursor-default"
                 >
                   {c}
                 </span>
@@ -53,12 +53,12 @@ export default function ProjectsPage() {
                       alt={p.title}
                       className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
-                    <span className="absolute left-3 top-3 rounded-full bg-[color:var(--brand-orange)] px-2.5 py-1 text-xs font-bold uppercase text-white">
+                    <span className="tag-chip absolute left-3 top-3">
                       {p.category}
                     </span>
                   </div>
                   <div className="p-5">
-                    <h3 className="text-lg font-bold text-slate-800 group-hover:text-[color:var(--brand-green)]">
+                    <h3 className="text-lg font-bold text-slate-900 group-hover:text-[color:var(--brand-red)]">
                       {p.title}
                     </h3>
                     <div className="mt-2 flex flex-wrap gap-4 text-sm text-slate-500">

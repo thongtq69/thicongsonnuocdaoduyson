@@ -1,113 +1,139 @@
-import { pinImages } from "@/lib/images";
+import Link from "next/link";
+import { serviceAreas, services } from "@/lib/data";
 
-const articles = [
-  {
-    title: "Báo giá thi công sơn nước mới nhất 2026 tại TP.HCM",
-    desc: "Tổng hợp đơn giá sơn nội – ngoại thất theo m², bóc tách vật tư, nhân công để chủ nhà dễ đối chiếu, kiểm soát chi phí.",
-    img: pinImages[8],
-    tag: "Báo giá",
-  },
-  {
-    title: "Quy trình 7 bước thi công sơn nước chuẩn nhà sản xuất",
-    desc: "Từ khâu vệ sinh, xử lý tường, trét bột bả, sơn lót đến 2 lớp sơn phủ – từng bước đều ảnh hưởng độ bền màu sơn.",
-    img: pinImages[9],
-    tag: "Quy trình",
-  },
-  {
-    title: "Cách chọn loại sơn Dulux – Jotun – Nippon – Mykolor phù hợp",
-    desc: "So sánh độ phủ, độ bóng, khả năng lau chùi, chống nấm mốc để chọn đúng dòng sơn cho từng vị trí trong nhà.",
-    img: pinImages[10],
-    tag: "Tư vấn",
-  },
-  {
-    title: "Sơn chống thấm tường ngoài – giải pháp bền 10 năm",
-    desc: "Kết hợp lớp phụ gia chống thấm Kova CT-11A và lớp sơn ngoại thất chuyên dụng để xử lý triệt để thấm dột.",
-    img: pinImages[11],
-    tag: "Chống thấm",
-  },
-  {
-    title: "Hướng dẫn phối màu sơn nhà hợp phong thủy 2026",
-    desc: "Gợi ý bảng màu sơn theo mệnh, hướng nhà và phong cách kiến trúc – giúp không gian hài hòa, thu hút vượng khí.",
-    img: pinImages[12],
-    tag: "Phong thủy",
-  },
-  {
-    title: "Thi công sơn epoxy nền nhà xưởng – giá và quy trình chuẩn",
-    desc: "Giải pháp sàn epoxy tự phẳng, sàn lăn chịu tải cho kho bãi, hầm xe, xưởng sản xuất – bền 5–8 năm.",
-    img: pinImages[13],
-    tag: "Epoxy",
-  },
-  {
-    title: "Cách xử lý tường bong tróc, ẩm mốc trước khi sơn lại",
-    desc: "Các bước cạo lớp sơn cũ, xử lý nứt chân chim, chống kiềm – đảm bảo lớp sơn mới bám chắc, không rộp.",
-    img: pinImages[14],
-    tag: "Cẩm nang",
-  },
-  {
-    title: "Sơn chống nóng mái tôn – giảm nhiệt độ nhà xưởng hiệu quả",
-    desc: "Sơn phản nhiệt giúp hạ 10–15°C, bảo vệ mái tôn khỏi rỉ sét, tiết kiệm điện điều hòa đáng kể.",
-    img: pinImages[15],
-    tag: "Chống nóng",
-  },
+const keywordChips = [
+  "Sơn bả trọn gói Hà Nam",
+  "Thi công sơn bả Quảng Ninh",
+  "Dịch vụ sơn nhà đẹp",
+  "Thi công thạch cao tại Hải Phòng",
+  "Sơn nhà giá rẻ",
+  "Thi công sơn bả Hà Nội",
+  "Bảng báo giá sơn bả",
+  "Thi công sơn chống thấm",
+  "Sửa chữa nhà trọn gói",
+  "Thi công sơn vạch kẻ theo yêu cầu",
+  "Thi công sơn vạch kẻ bãi đậu xe",
+  "Thi công sơn vạch kẻ nhà xưởng",
+  "Sơn nhà trọn gói Hưng Yên",
+  "Thi công sơn dầu Hải Phòng",
+  "Thi công sơn bả tại Đại An",
+  "Đội sơn bả Hải Phòng",
+  "Dịch vụ sơn bả uy tín",
+  "Chi phí sơn nhà",
+  "Sơn gai - sơn gấm",
+  "Sơn nhà chuyên nghiệp",
+  "Thi công sơn bả Hạ Long",
+  "Thi công sơn bả Ninh Bình",
+  "Thi công sơn bả Hòa Bình",
+  "Sơn bả trọn gói Bắc Ninh",
+  "Sơn chống thấm tường nhà",
+  "Sơn chống thấm sân thượng",
+  "Sơn chống nóng mái tôn",
+  "Dịch vụ sơn nhà Hạ Long Quảng Ninh",
+  "Sơn nhà Cửa Ông Quảng Ninh",
+  "Sơn nhà giá rẻ Quảng Ninh",
+  "Thi công sơn hiệu ứng",
 ];
 
 export function Services() {
   return (
-    <section id="dich-vu" className="py-14 md:py-20 bg-[color:var(--muted)]">
+    <section id="dich-vu" className="overflow-hidden bg-muted py-16 md:py-24">
       <div className="container-x">
-        <div className="text-center">
-          <p className="text-sm font-bold uppercase tracking-widest text-[color:var(--brand-orange)]">
-            Dịch vụ chúng tôi cung cấp
-          </p>
-          <h2 className="section-title mt-2 text-2xl md:text-3xl text-slate-800 uppercase">
-            Chi tiết các dịch vụ sơn nước Đào Duy Sơn
-          </h2>
+        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <div className="max-w-2xl">
+            <p className="eyebrow">Dịch vụ chính</p>
+            <h2 className="mt-3 text-3xl font-black uppercase leading-tight text-slate-950 md:text-5xl">
+              Hạng mục thi công dạng slide 01-09
+            </h2>
+            <p className="mt-5 text-slate-600 leading-relaxed">
+              Mỗi hạng mục được trình bày như một product card: số thứ tự lớn, ảnh thật,
+              mô tả ngắn, CTA rõ. Scroll ngang trên mobile để giữ cảm giác carousel của site mẫu.
+            </p>
+          </div>
+          <Link href="/dich-vu" className="btn-primary w-fit">
+            Xem toàn bộ dịch vụ
+          </Link>
         </div>
 
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {articles.map((a) => (
-            <article
-              key={a.title}
-              className="card-hover flex h-full flex-col overflow-hidden rounded-xl border border-slate-200 bg-white"
-            >
-              <div className="relative h-48 overflow-hidden">
+        <div className="service-rail mt-10">
+          {services.map((service, index) => (
+            <article key={service.slug} className="service-slide group">
+              <div className="relative h-72 overflow-hidden rounded-[1.4rem]">
                 <img
-                  src={a.img}
-                  alt={a.title}
-                  className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+                  src={service.img}
+                  alt={service.title}
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <span className="absolute left-3 top-3 rounded-full bg-[color:var(--brand-orange)] px-2.5 py-1 text-xs font-bold uppercase text-white">
-                  {a.tag}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
+                <span className="absolute left-5 top-5 text-6xl font-black text-white/20">
+                  {String(index + 1).padStart(2, "0")}
                 </span>
+                <span className="tag-chip absolute right-5 top-5">{service.tag}</span>
+                <div className="absolute inset-x-0 bottom-0 p-5 text-white">
+                  <h3 className="text-2xl font-black leading-tight">{service.title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-white/80">{service.short}</p>
+                </div>
               </div>
-              <div className="flex flex-1 flex-col p-4">
-                <h3 className="text-base font-bold text-slate-800 leading-snug line-clamp-2 hover:text-[color:var(--brand-green)]">
-                  {a.title}
-                </h3>
-                <p className="mt-2 text-sm text-slate-600 leading-relaxed line-clamp-3 flex-1">
-                  {a.desc}
-                </p>
+              <div className="mt-5 flex items-center justify-between gap-4">
+                <Link
+                  href={`/dich-vu/${service.slug}`}
+                  className="text-sm font-black uppercase text-[color:var(--brand-red)]"
+                >
+                  Xem chi tiết
+                </Link>
                 <a
                   href="tel:0913742110"
-                  className="mt-3 inline-flex items-center gap-1 text-xs font-bold uppercase text-[color:var(--brand-orange)] hover:underline"
+                  className="rounded-full bg-slate-950 px-4 py-2 text-sm font-bold text-white transition hover:bg-brand"
                 >
-                  Xem thêm
-                  <svg className="h-3.5 w-3.5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M10 17l5-5-5-5v10z" />
-                  </svg>
+                  Gọi báo giá
                 </a>
               </div>
             </article>
           ))}
         </div>
 
-        <div className="mt-10 text-center">
-          <a
-            href="tel:0913742110"
-            className="inline-flex items-center gap-2 rounded-full border-2 border-[color:var(--brand-green)] bg-white px-6 py-3 font-bold uppercase text-[color:var(--brand-green)] hover:bg-[color:var(--brand-green)] hover:text-white transition"
-          >
-            Xem tất cả dịch vụ
-          </a>
+        <div className="mt-16 grid gap-7 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+          <div>
+            <p className="eyebrow">Khu vực phục vụ</p>
+            <h3 className="mt-3 text-2xl font-black uppercase text-slate-950 md:text-3xl">
+              Có mặt khắp miền Bắc
+            </h3>
+            <p className="mt-4 text-slate-600 leading-relaxed">
+              Trụ sở Hải Phòng, đội xe và đội thợ di chuyển theo cụm công trình để giữ tiến độ.
+            </p>
+          </div>
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {serviceAreas.map((a) => (
+              <div key={a.slug} className="area-chip">
+                <span>{a.name.charAt(0)}</span>
+                <div>
+                  <div className="font-extrabold text-slate-950">{a.name}</div>
+                  <div className="mt-1 text-xs text-slate-600">{a.highlight}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-12 rounded-[1.7rem] border border-slate-200 bg-white p-6 md:p-8">
+          <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+            <div>
+              <p className="eyebrow">Từ khóa dịch vụ</p>
+              <h3 className="mt-1 text-xl font-extrabold text-slate-900 md:text-2xl">
+                Bạn đang tìm dịch vụ nào?
+              </h3>
+            </div>
+            <a href="#lien-he" className="btn-primary w-fit text-sm">
+              Gửi yêu cầu khảo sát
+            </a>
+          </div>
+          <div className="mt-6 flex flex-wrap gap-2">
+            {keywordChips.map((k) => (
+              <span key={k} className="keyword-chip">
+                {k}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </section>

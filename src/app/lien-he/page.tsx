@@ -5,9 +5,9 @@ import { PageBanner } from "@/components/site/PageBanner";
 import { Contact } from "@/components/site/Contact";
 
 export const metadata = {
-  title: "Liên hệ – Thi Công Sơn Nước Đào Duy Sơn",
+  title: "Liên hệ – Đội sơn bả Đào Duy Sơn (Hải Phòng & miền Bắc)",
   description:
-    "Liên hệ Đào Duy Sơn để được tư vấn thi công sơn nước: hotline 0913 742 110, email lienhe@daoduyson.vn, phục vụ TP.HCM và lân cận.",
+    "Liên hệ Đào Duy Sơn để nhận báo giá sơn bả – chống thấm – thạch cao: hotline 0913 742 110, email lienhe@daoduyson.vn. Phục vụ Hải Phòng, Quảng Ninh, Hà Nội, Hưng Yên, Bắc Ninh.",
 };
 
 const info = [
@@ -29,7 +29,7 @@ const info = [
   },
   {
     title: "Văn phòng chính",
-    value: "TP. Hồ Chí Minh",
+    value: "TP. Hải Phòng",
     href: "#",
     icon: (
       <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z" />
@@ -64,7 +64,7 @@ export default function ContactPage() {
                 href={i.href}
                 className="card-hover flex flex-col items-center rounded-2xl border border-slate-200 bg-white p-6 text-center"
               >
-                <div className="grid h-14 w-14 place-items-center rounded-full bg-[color:var(--brand-green)] text-white">
+                <div className="grid h-14 w-14 place-items-center rounded-full bg-brand text-white">
                   <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
                     {i.icon}
                   </svg>
@@ -72,7 +72,7 @@ export default function ContactPage() {
                 <div className="mt-4 text-sm font-bold uppercase text-slate-500">
                   {i.title}
                 </div>
-                <div className="mt-1 font-extrabold text-[color:var(--brand-green-dark)] text-lg">
+                <div className="mt-1 font-extrabold text-[color:var(--brand-red-dark)] text-lg">
                   {i.value}
                 </div>
               </a>
@@ -87,7 +87,7 @@ export default function ContactPage() {
             <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-sm">
               <iframe
                 title="Đào Duy Sơn map"
-                src="https://www.google.com/maps?q=Ho+Chi+Minh+City&output=embed"
+                src="https://www.google.com/maps?q=Hai+Phong+Vietnam&output=embed"
                 width="100%"
                 height="380"
                 loading="lazy"

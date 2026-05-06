@@ -55,7 +55,7 @@ export default async function ArticleDetail({
               />
 
               <div className="mt-8 space-y-5 text-[17px] leading-relaxed text-slate-700">
-                <p className="text-lg text-slate-800 font-medium">
+                <p className="text-lg text-slate-900 font-medium">
                   {article.excerpt}
                 </p>
                 {article.content.map((para, i) => (
@@ -63,12 +63,12 @@ export default async function ArticleDetail({
                 ))}
               </div>
 
-              <div className="mt-10 rounded-2xl bg-[color:var(--brand-green)] text-white p-6 text-center">
-                <div className="text-xl font-extrabold uppercase">
-                  Cần tư vấn thi công sơn nước?
+              <div className="mt-10 rounded-2xl bg-black-soft text-white p-6 text-center">
+                <div className="text-xl font-extrabold uppercase text-[color:var(--brand-gold)]">
+                  Cần tư vấn thi công sơn bả?
                 </div>
-                <p className="mt-2 text-white/90">
-                  Đào Duy Sơn khảo sát miễn phí và báo giá trong 30 phút.
+                <p className="mt-2 text-white/85">
+                  Đào Duy Sơn khảo sát miễn phí và báo giá trong 30 phút tại Hải Phòng &amp; miền Bắc.
                 </p>
                 <a href="tel:0913742110" className="btn-primary mt-5 inline-flex">
                   Gọi 0913 742 110
@@ -91,7 +91,7 @@ export default async function ArticleDetail({
                           className="h-16 w-20 flex-none rounded-lg object-cover"
                         />
                         <div className="text-sm">
-                          <div className="font-bold text-slate-800 group-hover:text-[color:var(--brand-green)] leading-snug line-clamp-2">
+                          <div className="font-bold text-slate-900 group-hover:text-[color:var(--brand-red)] leading-snug line-clamp-2">
                             {r.title}
                           </div>
                           <div className="mt-0.5 text-xs text-slate-500">{r.date}</div>
@@ -102,8 +102,8 @@ export default async function ArticleDetail({
                 </ul>
               </div>
 
-              <div className="rounded-2xl border border-slate-200 bg-[color:var(--muted)] p-6">
-                <div className="text-sm font-bold uppercase text-[color:var(--brand-orange)]">
+              <div className="rounded-2xl border border-slate-200 bg-muted p-6">
+                <div className="text-sm font-bold uppercase text-[color:var(--brand-red)]">
                   Danh mục
                 </div>
                 <ul className="mt-3 space-y-2 text-sm text-slate-700">

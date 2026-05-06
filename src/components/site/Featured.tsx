@@ -1,70 +1,84 @@
-const highlights = [
-  "Sơn lót kháng kiềm chính hãng, bám dính cao",
-  "2 lớp sơn phủ đúng chuẩn định mức nhà sản xuất",
-  "Che khuất sàn – đồ đạc trước khi thi công",
-  "Vệ sinh công trình sạch sẽ, bàn giao chu đáo",
-  "Chiết khấu tốt cho chủ đầu tư, nhà thầu",
+"use client";
+
+import { useState } from "react";
+import { featuredImage, workImages } from "@/lib/images";
+
+const benefits = [
+  {
+    label: "Chất lượng",
+    title: "Bề mặt dày, đều và sạch mép",
+    desc: "Kiểm soát từ nền tường tới lớp phủ: chà nhám, soi đèn, lăn đúng định mức, dặm vá trước khi bàn giao.",
+    bullets: ["Không bỏ lớp lót", "Che chắn sàn và đồ đạc", "Nghiệm thu từng phòng"],
+    image: featuredImage,
+  },
+  {
+    label: "Giá thành",
+    title: "Báo giá theo m², không phát sinh mơ hồ",
+    desc: "Tách rõ vật tư, nhân công, giàn giáo, chống thấm, thạch cao để chủ nhà kiểm soát ngân sách ngay từ đầu.",
+    bullets: ["Báo giá sau khảo sát", "Chọn 3 mức vật tư", "Cam kết khối lượng"],
+    image: workImages[69],
+  },
+  {
+    label: "Tiến độ",
+    title: "Tổ chức ca thợ theo mặt bằng thực tế",
+    desc: "Phân đội xử lý bề mặt, đội bả, đội lăn phủ và vệ sinh bàn giao để rút ngắn thời gian chờ khô.",
+    bullets: ["Lịch thi công từng ngày", "Không gián đoạn sinh hoạt", "Dọn sạch cuối ca"],
+    image: workImages[179],
+  },
 ];
 
 export function Featured() {
-  return (
-    <section className="py-16 md:py-20 bg-white">
-      <div className="container-x">
-        <div className="text-center">
-          <p className="text-sm font-bold uppercase tracking-widest text-[color:var(--brand-orange)]">
-            Gói thi công nổi bật
-          </p>
-          <h2 className="section-title mt-2 text-2xl md:text-3xl text-slate-800">
-            Dịch vụ sơn nhà trọn gói Đào Duy Sơn
-          </h2>
-        </div>
+  const [activeIndex, setActiveIndex] = useState(0);
+  const active = benefits[activeIndex];
 
-        <div className="mt-12 grid gap-10 md:grid-cols-2 items-center">
-          <div className="relative">
-            <img
-              src="https://i.pinimg.com/736x/6a/b0/af/6ab0af2a64bb3d61ff93ad66b5e126f4.jpg"
-              alt="Thi công sơn nước Đào Duy Sơn"
-              className="rounded-2xl shadow-lg w-full h-[420px] object-cover"
-            />
-            <div className="absolute -bottom-6 -right-2 md:-right-6 rounded-xl bg-[color:var(--brand-orange)] text-white px-6 py-4 shadow-xl">
-              <div className="text-3xl font-extrabold">24 tháng</div>
-              <div className="text-sm">bảo hành chính hãng</div>
+  return (
+    <section className="benefit-stage bg-white py-16 md:py-24">
+      <div className="container-x">
+        <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+          <div>
+            <p className="eyebrow">Lợi ích thi công</p>
+            <h2 className="mt-3 text-3xl font-black uppercase leading-tight text-slate-950 md:text-5xl">
+              Ba thứ chủ nhà quan tâm nhất
+            </h2>
+            <p className="mt-5 text-slate-600 leading-8">
+              Lấy logic tab “Chất lượng - Giá thành - Tiến độ” của Paint&More, chuyển thành
+              một khối tương tác để khách hiểu nhanh vì sao nên chọn Đào Duy Sơn.
+            </p>
+
+            <div className="mt-8 grid gap-3">
+              {benefits.map((item, index) => (
+                <button
+                  key={item.label}
+                  type="button"
+                  onClick={() => setActiveIndex(index)}
+                  className={`benefit-tab ${activeIndex === index ? "benefit-tab-active" : ""}`}
+                >
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  {item.label}
+                </button>
+              ))}
             </div>
           </div>
 
-          <div>
-            <h3 className="text-xl md:text-2xl font-extrabold text-slate-800">
-              Cam kết chất lượng – Giá trọn gói không phát sinh
-            </h3>
-            <p className="mt-4 text-slate-600 leading-relaxed">
-              Đào Duy Sơn báo giá theo m² hoàn thiện, đã bao gồm vật tư sơn chính hãng,
-              nhân công, giàn giáo, bạt che và vệ sinh. Chủ nhà chỉ việc kiểm tra và
-              thanh toán khi hài lòng.
-            </p>
+          <div className="benefit-panel">
+            <div className="relative overflow-hidden rounded-[1.7rem]">
+              <img src={active.image} alt={active.title} className="h-[430px] w-full object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6 text-white md:p-8">
+                <div className="text-sm font-black uppercase tracking-[0.28em] text-[color:var(--brand-gold)]">
+                  Lợi ích - quy trình
+                </div>
+                <h3 className="mt-3 text-3xl font-black">{active.title}</h3>
+                <p className="mt-3 max-w-xl text-sm leading-7 text-white/82">{active.desc}</p>
+              </div>
+            </div>
 
-            <ul className="mt-6 space-y-3">
-              {highlights.map((h) => (
-                <li key={h} className="flex items-start gap-3">
-                  <span className="mt-1 grid h-6 w-6 flex-none place-items-center rounded-full bg-[color:var(--brand-green)] text-white">
-                    <svg className="h-3.5 w-3.5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z" />
-                    </svg>
-                  </span>
-                  <span className="text-slate-700">{h}</span>
-                </li>
+            <div className="mt-5 grid gap-3 md:grid-cols-3">
+              {active.bullets.map((bullet) => (
+                <div key={bullet} className="rounded-2xl border border-slate-200 bg-white p-4 text-sm font-bold text-slate-800 shadow-sm">
+                  {bullet}
+                </div>
               ))}
-            </ul>
-
-            <div className="mt-8 flex flex-wrap gap-4">
-              <a href="tel:0913742110" className="btn-primary">
-                Gọi báo giá 0913 742 110
-              </a>
-              <a
-                href="#lien-he"
-                className="inline-flex items-center gap-2 rounded-full border-2 border-[color:var(--brand-green)] px-5 py-2.5 font-semibold text-[color:var(--brand-green)] hover:bg-[color:var(--brand-green)] hover:text-white transition"
-              >
-                Gửi yêu cầu khảo sát
-              </a>
             </div>
           </div>
         </div>

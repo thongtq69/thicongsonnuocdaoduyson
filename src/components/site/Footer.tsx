@@ -1,43 +1,48 @@
 export function Footer() {
   return (
-    <footer className="bg-[#0b2a19] text-white/80">
+    <footer className="bg-[#121212] text-white/75">
       <div className="container-x grid gap-10 py-14 md:grid-cols-4">
         <div>
           <div className="flex items-center gap-3">
-            <div className="h-12 w-12 rounded-full bg-[color:var(--brand-green)] grid place-items-center font-extrabold text-white">
+            <div className="h-12 w-12 rounded-full bg-brand grid place-items-center font-extrabold text-white shadow-md shadow-red-900/30">
               ĐS
             </div>
             <div>
               <div className="text-sm font-bold uppercase text-white">Thi công sơn nước</div>
-              <div className="text-lg font-extrabold text-[color:var(--brand-orange)]">Đào Duy Sơn</div>
+              <div className="text-lg font-extrabold text-[color:var(--brand-gold)]">Đào Duy Sơn</div>
             </div>
           </div>
           <p className="mt-4 text-sm leading-relaxed">
-            Đơn vị thi công sơn nước trọn gói cho nhà ở, biệt thự, văn phòng và nhà xưởng
-            tại TP.HCM và các tỉnh lân cận. Bảo hành chính hãng 24 tháng.
+            Đơn vị thi công sơn bả trọn gói tại Hải Phòng, Quảng Ninh, Hà Nội, Hưng Yên,
+            Bắc Ninh, Hà Nam, Ninh Bình, Hòa Bình. Bảo hành chính hãng 24 tháng,
+            khảo sát miễn phí trong 24 giờ.
           </p>
         </div>
 
         <div>
           <div className="text-sm font-bold uppercase text-white">Dịch vụ</div>
           <ul className="mt-4 space-y-2 text-sm">
-            <li>Sơn nhà ở, nhà phố</li>
-            <li>Sơn biệt thự cao cấp</li>
-            <li>Sơn chống thấm tường, mái</li>
-            <li>Sơn epoxy nhà xưởng</li>
+            <li>Sơn bả trọn gói nhà ở, biệt thự</li>
+            <li>Thi công thạch cao Hải Phòng</li>
+            <li>Sơn chống thấm tường, sân thượng</li>
             <li>Sơn chống nóng mái tôn</li>
-            <li>Sơn hiệu ứng nghệ thuật</li>
+            <li>Sơn vạch kẻ bãi đậu xe, nhà xưởng</li>
+            <li>Sơn hiệu ứng – sơn gai – sơn gấm</li>
           </ul>
         </div>
 
         <div>
-          <div className="text-sm font-bold uppercase text-white">Liên kết</div>
+          <div className="text-sm font-bold uppercase text-white">Khu vực phục vụ</div>
           <ul className="mt-4 space-y-2 text-sm">
-            <li><a href="/gioi-thieu" className="hover:text-[color:var(--brand-orange)]">Giới thiệu</a></li>
-            <li><a href="/dich-vu" className="hover:text-[color:var(--brand-orange)]">Dịch vụ</a></li>
-            <li><a href="/cong-trinh" className="hover:text-[color:var(--brand-orange)]">Công trình</a></li>
-            <li><a href="/tin-tuc" className="hover:text-[color:var(--brand-orange)]">Tin tức</a></li>
-            <li><a href="/lien-he" className="hover:text-[color:var(--brand-orange)]">Liên hệ</a></li>
+            <li>Hải Phòng – Quảng Ninh (Hạ Long, Cửa Ông)</li>
+            <li>Hà Nội – Hưng Yên – Bắc Ninh</li>
+            <li>Hà Nam – Ninh Bình – Hòa Bình</li>
+            <li>Khu công nghiệp Đại An &amp; lân cận</li>
+            <li>
+              <a href="/lien-he" className="hover:text-[color:var(--brand-gold)]">
+                Xem bảng báo giá sơn bả →
+              </a>
+            </li>
           </ul>
         </div>
 
@@ -45,10 +50,10 @@ export function Footer() {
           <div className="text-sm font-bold uppercase text-white">Liên hệ</div>
           <ul className="mt-4 space-y-2 text-sm">
             <li>
-              Hotline: <a href="tel:0913742110" className="font-bold text-[color:var(--brand-orange)]">0913 742 110</a>
+              Hotline: <a href="tel:0913742110" className="font-bold text-[color:var(--brand-gold)]">0913 742 110</a>
             </li>
             <li>Email: lienhe@daoduyson.vn</li>
-            <li>Khu vực: TP. HCM & lân cận</li>
+            <li>Trụ sở: TP. Hải Phòng</li>
             <li>Giờ làm việc: 7:30 – 19:00 (T2 – CN)</li>
           </ul>
         </div>

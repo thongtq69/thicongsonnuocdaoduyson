@@ -11,25 +11,25 @@ const navItems = [
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-40 bg-white shadow-[0_2px_10px_rgba(0,0,0,0.06)]">
-      <div className="bg-[color:var(--brand-green)] text-white text-sm">
+    <header className="sticky top-0 z-40 border-b border-slate-200/70 bg-white/94 shadow-[0_10px_30px_rgba(18,18,18,0.08)] backdrop-blur-xl">
+      <div className="bg-[#121212] text-white text-sm">
         <div className="container-x flex flex-wrap items-center justify-between gap-2 py-2">
           <div className="flex items-center gap-4">
             <span className="inline-flex items-center gap-1.5">
               <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z" />
               </svg>
-              TP. HCM – Toàn quốc
+              Hải Phòng – Quảng Ninh – Hà Nội & các tỉnh miền Bắc
             </span>
             <span className="hidden sm:inline-flex items-center gap-1.5">
               <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 12.7c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3 1.34 3 3 3zM4 20v-1c0-2.66 5.33-4 8-4s8 1.34 8 4v1H4z" />
               </svg>
-              Thi Công Sơn Nước Đào Duy Sơn
+              Đội sơn bả uy tín – Thi Công Sơn Nước Đào Duy Sơn
             </span>
           </div>
           <div className="flex items-center gap-4 font-semibold">
-            <a href="tel:0913742110" className="inline-flex items-center gap-1.5 hover:text-[color:var(--brand-orange)]">
+            <a href="tel:0913742110" className="inline-flex items-center gap-1.5 hover:text-[color:var(--brand-gold)]">
               <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.24.2 2.45.57 3.57a1 1 0 0 1-.24 1.02l-2.2 2.2z" />
               </svg>
@@ -41,14 +41,14 @@ export function Header() {
 
       <div className="container-x flex items-center justify-between gap-6 py-4">
         <Link href="/" className="flex items-center gap-3">
-          <div className="h-12 w-12 rounded-full bg-[color:var(--brand-green)] text-white grid place-items-center font-extrabold text-lg shadow-md">
+          <div className="h-12 w-12 rounded-[1rem] bg-brand text-white grid place-items-center font-extrabold text-lg shadow-md">
             ĐS
           </div>
           <div className="leading-tight">
-            <div className="text-[15px] font-extrabold text-[color:var(--brand-green-dark)] uppercase tracking-wide">
+            <div className="text-[15px] font-extrabold text-[color:var(--brand-red-dark)] uppercase tracking-wide">
               Thi Công Sơn Nước
             </div>
-            <div className="text-xl font-extrabold text-[color:var(--brand-orange)] uppercase">
+            <div className="text-xl font-extrabold text-[color:var(--brand-gold)] uppercase">
               Đào Duy Sơn
             </div>
           </div>
@@ -59,7 +59,7 @@ export function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className="px-3 py-2 text-[15px] font-semibold uppercase tracking-wide text-slate-700 hover:text-[color:var(--brand-green)] transition-colors"
+              className="rounded-full px-3 py-2 text-[15px] font-bold uppercase tracking-wide text-slate-700 hover:bg-muted hover:text-[color:var(--brand-red)] transition-colors"
             >
               {item.label}
             </Link>
@@ -83,7 +83,7 @@ export function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className="whitespace-nowrap px-3 py-1.5 text-sm font-semibold uppercase text-slate-700 hover:text-[color:var(--brand-green)]"
+              className="whitespace-nowrap px-3 py-1.5 text-sm font-semibold uppercase text-slate-700 hover:text-[color:var(--brand-red)]"
             >
               {item.label}
             </Link>
