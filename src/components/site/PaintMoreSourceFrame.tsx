@@ -29,6 +29,21 @@ const brandBadge =
   <text x="70" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#fff">SƠN NƯỚC</text>
 </svg>`);
 
+const socialBadge = (label: string, background: string) =>
+  "data:image/svg+xml;charset=utf-8," +
+  encodeURIComponent(`
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96">
+  <circle cx="48" cy="48" r="45" fill="${background}"/>
+  <circle cx="48" cy="48" r="36" fill="none" stroke="#fff" stroke-width="4" opacity=".82"/>
+  <text x="48" y="54" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="900" fill="#fff">${label}</text>
+</svg>`);
+
+const socialBadges = [
+  socialBadge("MSG", "#6b5cff"),
+  socialBadge("ZALO", "#0b8fff"),
+  socialBadge("GOI", "#0a8a3d"),
+];
+
 const serviceSlides = [
   services[0],
   services[3],
@@ -118,6 +133,80 @@ export function PaintMoreSourceFrame() {
           letter-spacing: .11em;
         }
         .dds-logo span:last-child { padding-left: 18px; }
+        .elementor-location-header {
+          position: relative !important;
+          z-index: 9999 !important;
+          isolation: isolate !important;
+        }
+        .header-pain-more,
+        .header-pain-more.scrolled {
+          background: rgba(255, 255, 255, .96) !important;
+          box-shadow: 0 12px 34px rgba(23, 43, 31, .08) !important;
+          backdrop-filter: blur(14px);
+        }
+        .header-pain-more > .e-con-inner {
+          max-width: min(1320px, calc(100% - 64px)) !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
+          display: flex !important;
+          align-items: center !important;
+          justify-content: space-between !important;
+          gap: 24px !important;
+        }
+        .hn-logo {
+          flex: 0 0 auto !important;
+          width: auto !important;
+          min-width: 132px !important;
+        }
+        .menu-header {
+          flex: 1 1 auto !important;
+          min-width: 0 !important;
+          width: auto !important;
+        }
+        .menu-header .elementor-nav-menu--main {
+          display: flex !important;
+          justify-content: flex-end !important;
+          overflow: visible !important;
+        }
+        #menu-1-e7ee534 {
+          display: flex !important;
+          align-items: center !important;
+          justify-content: flex-end !important;
+          gap: clamp(10px, 1.08vw, 20px) !important;
+          width: 100% !important;
+          margin: 0 !important;
+          overflow: visible !important;
+        }
+        #menu-1-e7ee534 > .menu-item {
+          flex: 0 0 auto !important;
+          width: auto !important;
+        }
+        #menu-1-e7ee534 a.elementor-item {
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+          color: #303030 !important;
+          font-size: clamp(13px, .95vw, 16px) !important;
+          font-weight: 800 !important;
+          letter-spacing: 0 !important;
+          white-space: nowrap !important;
+          text-shadow: 0 1px 0 rgba(255, 255, 255, .8) !important;
+        }
+        #menu-1-e7ee534 a.elementor-item:hover,
+        #menu-1-e7ee534 a.elementor-item-active {
+          color: #0a8a3d !important;
+        }
+        @media (max-width: 1320px) {
+          .header-pain-more > .e-con-inner {
+            max-width: calc(100% - 40px) !important;
+            gap: 18px !important;
+          }
+          #menu-1-e7ee534 {
+            gap: 14px !important;
+          }
+          #menu-1-e7ee534 a.elementor-item {
+            font-size: 13px !important;
+          }
+        }
         .dds-fit-cover { object-fit: cover !important; width: 100% !important; height: 100% !important; }
         .dds-section3-photo {
           width: min(36vw, 460px) !important;
@@ -367,6 +456,10 @@ export function PaintMoreSourceFrame() {
         const href = index === 1 ? `https://zalo.me/${hotline}` : index === 2 ? `tel:${hotline}` : `tel:${hotline}`;
         setLink(anchor, href);
       });
+      doc.querySelectorAll(".pmb-social-container img").forEach((image, index) => {
+        setImage(image, socialBadges[index] ?? brandBadge, ["Messenger", "Zalo", "Hotline"][index] ?? "Đào Duy Sơn");
+      });
+      setImage(doc.querySelector("#pmb-lightbox-img"), brandBadge, "Xem ảnh Đào Duy Sơn");
       setHtml("#pmb-popup", `👋 Tư vấn <b>sơn bả</b> ngay!<span class="pmb-close-popup" onclick="closePopup()">×</span>`);
       setImage(doc.querySelector("#pmb-toggle img"), brandBadge, "Đào Duy Sơn");
       setText(".pmb-header-info", "Đào Duy Sơn AI (Tư vấn)");
